@@ -2,6 +2,7 @@
 """Plot posterior flux and parameter RMSE relative to prior over time."""
 
 from datetime import datetime
+from pathlib import Path
 
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -14,6 +15,8 @@ sns.set_color_codes()
 
 CASE = "summer"
 # CASE = "winter"
+
+FIGURES = Path("figures")
 
 CYCLE_START = {
     "summer": datetime(2021, 6, 17, 0, 0, 0),
@@ -216,6 +219,8 @@ ax.set_xlabel("Date")
 ax.set_ylabel("Relative error reduction (%)")
 
 fig.tight_layout()
-fig.savefig(f"output/rmse_{CASE}.png")
+
+FIGURES.mkdir(exist_ok=True)
+fig.savefig(FIGURES / f"rmse_{CASE}.png")
 
 plt.show()
