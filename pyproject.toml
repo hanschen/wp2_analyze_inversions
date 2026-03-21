@@ -1,0 +1,13 @@
+[project]
+name = "analyze-wp2-inversions"
+version = "0.1.0"
+description = "Make plots for inversions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "cartopy>=0.25.0",
+    "matplotlib>=3.10.8",
+    "netcdf4>=1.7.4",
+    "pyqt6>=6.10.2",
+    "seaborn>=0.13.2",
+]
