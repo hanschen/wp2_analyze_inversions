@@ -6,7 +6,6 @@ from pathlib import Path
 import netCDF4 as nc
 import numpy as np
 
-
 OUTPUT = Path("output")
 
 CASES = [
