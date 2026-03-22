@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S uv run --script
 """Plot map of prior, true, and posterior fluxes."""
 
 from pathlib import Path
