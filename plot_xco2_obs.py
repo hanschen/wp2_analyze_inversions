@@ -39,6 +39,20 @@ def create_map(ax):
     ax.add_feature(cfeature.BORDERS, linewidth=0.5, edgecolor="gray")
 
 
+def annotate(ax, letter):
+    ax.text(
+        0.04,
+        0.965,
+        letter,
+        color="k",
+        fontsize=12,
+        ha="left",
+        va="top",
+        bbox=dict(facecolor="w", edgecolor="k"),
+        transform=ax.transAxes,
+    )
+
+
 obs_num_summer = read_obs_num(DATA_DIR / "summer" / f"{DATASET}.nc")
 obs_num_winter = read_obs_num(DATA_DIR / "winter" / f"{DATASET}.nc")
 
@@ -83,6 +97,7 @@ gs = fig.add_gridspec(
 )
 
 ax = fig.add_subplot(gs[0, 0], projection=proj)
+annotate(ax, "a")
 create_map(ax)
 
 cs = ax.pcolor(
@@ -96,6 +111,7 @@ cs = ax.pcolor(
 )
 
 ax = fig.add_subplot(gs[0, 1], projection=proj)
+annotate(ax, "b")
 create_map(ax)
 
 ax.pcolor(
