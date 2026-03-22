@@ -10,7 +10,7 @@ OUTPUT = Path("output")
 
 CASES = [
     "summer",
-    # "winter",
+    "winter",
 ]
 
 MONTHS = {
@@ -76,7 +76,8 @@ for case in CASES:
         mask=mask,
     )
 
-    OUTPUT.mkdir(exist_ok=True)
-    np.save(OUTPUT / "mon_truth", monthly_fluxes_truth)
-    np.save(OUTPUT / "mon_prior", monthly_fluxes_prior)
-    np.save(OUTPUT / "mon_post", monthly_fluxes_post)
+    output = OUTPUT / case
+    output.mkdir(exist_ok=True)
+    np.save(output / "mon_truth", monthly_fluxes_truth)
+    np.save(output / "mon_prior", monthly_fluxes_prior)
+    np.save(output / "mon_post", monthly_fluxes_post)

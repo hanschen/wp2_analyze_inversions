@@ -21,7 +21,7 @@ CASE = "summer"
 
 VMAX = {
     "summer": 150,
-    "winter": 150,
+    "winter": 60,
 }[CASE]
 
 
@@ -72,9 +72,9 @@ def annotate(ax, letter):
 
 # %% Load data
 
-fluxes_truth = np.load("output/mon_truth.npy")
-fluxes_prior = np.load("output/mon_prior.npy")
-fluxes_post = np.load("output/mon_post.npy")
+fluxes_truth = np.load(f"output/{CASE}/mon_truth.npy")
+fluxes_prior = np.load(f"output/{CASE}/mon_prior.npy")
+fluxes_post = np.load(f"output/{CASE}/mon_post.npy")
 
 fluxes_truth = convert(fluxes_truth)
 fluxes_prior = convert(fluxes_prior)
