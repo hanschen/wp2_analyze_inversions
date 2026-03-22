@@ -10,4 +10,5 @@ dependencies = [
     "netcdf4>=1.7.4",
     "pyqt6>=6.10.2",
     "seaborn>=0.13.2",
+    "xarray>=2026.2.0",
 ]
